@@ -1,0 +1,28 @@
+#!/bin/bash
+PYTHON_EXECUTABLE=python3
+#PYTHON_EXECUTABLE=/usr/bin/python3
+FILES=${1:-day*.py}
+
+for f in $FILES
+do
+    filename="${f%.*}"
+    lines=$(grep -cve '^\s*$' $f)
+    number=$(echo ${f//[^0-9]/} | bc)
+
+    echo "------------------"
+    echo "Running $f (day $number)"
+
+    export TIMEFORMAT="%E" 
+
+    export PYENV_VERSION=pypy3.9-7.3.10
+    { time $PYTHON_EXECUTABLE $f < in/$filename.in ; } 2> .time.tmp
+    TIME1=$(cat .time.tmp)
+
+    export PYENV_VERSION=3.12.0
+    { time $PYTHON_EXECUTABLE $f < in/$filename.in ; } 2> .time.tmp
+    TIME2=$(cat .time.tmp)
+
+    >&2 echo "|[Day $number](https://adventofcode.com/2025/day/$number)|[$f](https://github.com/juanplopes/advent-of-code-2025/blob/main/$f)|$lines|$TIME1|$TIME2"
+done
+
+
