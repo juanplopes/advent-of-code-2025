@@ -5,11 +5,9 @@ def solve(line):
 state, answer1, answer2 = 50, 0, 0
 for line in sys.stdin.read().splitlines():
     clicks = solve(line)
-    for i in range(abs(clicks)):
-        state += 1 if clicks > 0 else -1
-        state %= 100
-        if state == 0: answer2 += 1
+    if clicks < 0: answer2 += abs((state + clicks-1) // 100) - (state == 0)
+    elif clicks > 0: answer2 += abs((state + clicks) // 100)
+    state = (state + clicks) % 100
     if state == 0: answer1 += 1
-#    print(' ', state)
-    
+   
 print(answer1, answer2)
