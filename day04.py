@@ -1,4 +1,4 @@
-import sys, functools
+import sys
 
 def remove(T):
     S = {(i, j) for i in range(len(T)) for j in range(len(T[i])) if T[i][j] == '@'}
