@@ -6,3 +6,4 @@
 |[Day 2](https://adventofcode.com/2025/day/2)|[day02.py](https://github.com/juanplopes/advent-of-code-2025/blob/main/day02.py)|10|0.290|1.307
 |[Day 3](https://adventofcode.com/2025/day/3)|[day03.py](https://github.com/juanplopes/advent-of-code-2025/blob/main/day03.py)|10|0.259|0.197
 |[Day 4](https://adventofcode.com/2025/day/4)|[day04.py](https://github.com/juanplopes/advent-of-code-2025/blob/main/day04.py)|12|0.676|0.658
+|[Day 5](https://adventofcode.com/2025/day/5)|[day05.py](https://github.com/juanplopes/advent-of-code-2025/blob/main/day05.py)|13|0.338|0.198
