@@ -20,7 +20,6 @@ while count2 < len(V)-1:
         answer1 = math.prod(heapq.nlargest(3, 
             collections.Counter(map(find, range(len(V)))).values()))
 
-
     a, b = find(i), find(j)
     P[min(a, b)] = max(a, b)
     if a != b: count2 += 1
