@@ -6,7 +6,7 @@ ops = T[-1].split()
 nums1, nums2 = list(map(str.split, T[:-1])), [[]]
 
 for i in range(len(T[0])):
-    v = ''.join(T[j][i] for j in range(len(T) - 1) if T[j][i] != ' ')
+    v = ''.join(T[j][i] for j in range(len(T) - 1)).strip()
     if v == '': nums2.append([])
     else:       nums2[-1].append(v)
 
